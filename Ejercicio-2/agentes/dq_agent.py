@@ -35,8 +35,8 @@ class QAgent(Agent):
             'distancia_critica_y' : 3
         }
         self.player_v_threshold = 3
-        self.tuberia_y_threshold_up = 50
-        self.tuberia_y_threshold_bottom = -50
+        self.tuberia_y_threshold_up = 75
+        self.tuberia_y_threshold_bottom = -75
 
     def discretize_state(self, state):
         """

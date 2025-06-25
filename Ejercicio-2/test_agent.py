@@ -4,6 +4,7 @@ import time
 import argparse
 import importlib
 import sys
+import numpy as np
 
 # --- Configuración del Entorno y Agente ---
 # Inicializar el juego
@@ -45,7 +46,9 @@ else:
     agent = AgentClass(actions, game)
 
 # Agente con acciones aleatorias
-while True:
+recompensas_sesion = []
+
+for i in range(10):
     env.reset_game()
     agent.reset()
     state_dict = env.getGameState()
@@ -59,4 +62,7 @@ while True:
         done = env.game_over()
         total_reward_episode += reward
         time.sleep(0.03)
+    recompensas_sesion.append(total_reward_episode)
     print(f"Recompensa episodio: {total_reward_episode}")
+
+print(f'El promedio de recompensas de los 10 episodios es de: {np.mean(recompensas_sesion)}')

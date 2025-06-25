@@ -43,7 +43,7 @@ model.compile(optimizer='adam', loss='mse', metrics=['R2Score'])
 # --- Entrenar la red neuronal ---
 # COMPLETAR: Ajustar hiperparámetros según sea necesario
 # model.fit(X, y, ... demas opciones de entrenamiento ...)
-history = model.fit(X,y,batch_size=64,validation_split=0.2, epochs=1000)#, callbacks=tf.keras.callbacks.EarlyStopping(monitor='val_loss',verbose=1, patience=100, restore_best_weights=True))
+history = model.fit(X,y,batch_size=64, epochs=1000, callbacks=tf.keras.callbacks.EarlyStopping(monitor='val_loss',verbose=1, patience=150, restore_best_weights=True))
 # --- Mostrar resultados del entrenamiento ---
 # Completar: Imprimir métricas de entrenamiento
 
